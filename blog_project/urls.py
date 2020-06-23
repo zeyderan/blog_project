@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # blog app url yapısını import eder
     path('',include('blog.urls')),
+    path('accounts/',include('django.contrib.auth.urls')),#django aut user işlemleri içi gerekli
 ]
