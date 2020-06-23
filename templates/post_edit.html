@@ -1,0 +1,13 @@
+<!-- templates/post_edit.html -->
+
+{% extends 'base.html' %}
+{%  load static %}
+{% block content %}
+    <h1>Gönderiyi Düzenle</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {% comment %} form.as_p denildiği için form acrion ='' şeklinde bırakılır {% endcomment %}
+        {{form.as_p}}
+        <input type="submit" value="Güncelle">
+    </form>
+{% endblock content %}

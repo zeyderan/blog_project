@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{%  load static %}
+
+
+{% block content %}
+{% for post in blog_list  %}
+
+    <div class="post-entry">
+        <!-- burada url 'post_detail' isimli url i çağırı ve sonuna post.pk ekler -->
+        <h2><a href="{% url 'post_detail' post.pk %}">{{post.title}}</a></h2>
+        <p>{{post.body}}</p>
+    </div>
+
+{% endfor %}
+{% endblock content %}

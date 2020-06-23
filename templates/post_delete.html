@@ -1,0 +1,17 @@
+<!-- templates/post_delete.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Gönderiyi Sil</h1>
+
+  <form action="" method="POST">
+      {% csrf_token %}
+      <p>Gönderiyi silmek istediğinizden eminmisiniz?
+          <br><br>
+        <span style="font-weight: bolder;">{{post.title}}</span>
+        <br><br>
+        <input type="submit" value="Onayla">
+      </p>
+  </form>
+{% endblock content %}

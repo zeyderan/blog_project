@@ -1,0 +1,20 @@
+<!-- templates/post_detail.html -->
+<!-- base.htmli extend eder  -->
+{% extends 'base.html' %}
+{% comment %} static dosyaları yükle {% endcomment %}
+{%  load static %} 
+{% block content %}
+    <div class="post-entry">
+        <!-- post_detail ismi viewdan geliyor
+        öyle tanımladı -->
+        <h2>{{post_detail.title}}</h2>
+        <p>{{post_detail.body}}</p>
+    </div>
+    <!-- bu sayfaya gönderilen context ismi post_detail olduğu için budaki modeli başka sayfaya yönlendirirken aynı ismi mutlaka kullan :)-->
+    <a href="{% url 'post_edit' post_detail.pk %}"> 
+    Gönderiyi Düzenle</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="{% url 'post_delete' post_detail.pk %}"> 
+    Gönderiyi Sil</a>
+    
+{% endblock content %}
